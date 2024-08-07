@@ -222,7 +222,7 @@ transition: .3s ease-in-out;
         content:"PHP Engineer";
     }
     61%,80%{
-        content:"MySQL Developer";
+        content:"MariaDB Developer";
     }
     81%,100%{
         content:"Web Developer";
@@ -398,62 +398,78 @@ transition: .3s ease-in-out;
     line-height: 1.7;
     margin: auto;
 }
-.testimonials{
+.portfolio{
     background: var(--second-bg-color);
 }
-.testimonials-box{
-    background-size: cover;
+.main-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+}
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(359px,auto));
+}
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform .5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.1),var(--main-color));
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height .5s;
+}
+
+.layer h5{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.layer p{
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.layer a{
+    /* color: #ff004f; */
+    margin-top: 20px;
+    font-size: 20px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-.testimonials .header{
-    margin-bottom: 5rem;
-}
-.testimonials-box img{
-    width: 15rem;
     border-radius: 50%;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
 }
-.wrapper{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 3rem;
+.row:hover img{
+    transform: scale(1.03);
 }
-.testimonial-item{
-min-height: 550px;
-max-width: 450px;
-background: rgba(0,0,0,0.7);
-border: 3px solid rgba(238,238,238,0.2);
-border-radius: 2rem;
-margin: 0 2rem;
-padding: 30px 60px;
-cursor: pointer;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-gap: 1.5rem;
-color: white;
-transition: .4s ease-in-out;
-}
-.testimonial-item:hover{
-    border: 3px solid var(--main-color);
-    transform: translateY(-10px)scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
-}
-.testimonial-item h2{
-    font-size: 2.8rem;
-}
-.testimonial-item p{
-    font-size: 1.3rem;
-}
-#star{
-    color: gold;
-    font-size:2rem ;
+.row:hover .layer{
+    height: 100%;
 }
 .contact{
     background-color: var(--bg-color);
@@ -633,3 +649,5 @@ padding: 0 15px;
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+
