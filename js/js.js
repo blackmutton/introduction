@@ -17,7 +17,7 @@ window.onscroll = () => {
 
             let activeLink = document.querySelector('header nav a[href*="' + id + '"]');
             if (activeLink) {
-                activeLink.classList.add('active'); // Corrected this line
+                activeLink.classList.add('active');
             }
         }
     });
